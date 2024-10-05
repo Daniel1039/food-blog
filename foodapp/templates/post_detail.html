@@ -1,0 +1,88 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+
+    <!-- Start Page Title Section -->
+    <!-- <div class="page-title-area">
+      <div class="d-table">
+          <div class="d-table-cell">
+              <div class="container">
+                  <div class="page-title-content">
+                      <h2>Blog</h2>
+                      <ul>
+                        
+                          <li>Blog</li>
+                      </ul>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div> -->
+  
+  <!-- <div class="container">
+      <div class="row">
+        <div class="col-md-8 card mb-4  mt-3 left  top">
+          <div class="card-body"> -->
+            <!-- {% if post.image %}
+                <div>
+                    <img src="{{ post.image.url }}" class="card-img-top" alt="{{ post.title }}">
+                  
+                 
+                </div>
+            {% endif %} -->
+            <!-- <li>
+                <a href="{% url 'post_list' %}">
+                    <img src="{{ post.image.url }}" class="card-img-top" alt="{{ post.title }}">
+                   
+                </a>
+            </li>
+            
+            <h1 class="soon" style="padding: 10px; margin-bottom: 5px;">{{ post.title }}</h1>
+            <p class="text-muted" style="padding: 10px; margin-bottom: 5px;">posted on: {{ post.created_on }} - posted by: {{ post.author }} |</p>
+            <p class="card-text" style="padding: 10px; margin-top: 5px;">{{ post.content | safe }}</p>
+             -->
+
+          <!-- </div>
+        </div>
+        
+      </div>
+    </div> -->
+    <li class="list-unstyled">
+        <a href="{% url 'post_list' %}">
+            <img src="{{ post.image.url }}" class="card-img-top img-fluid" alt="{{ post.title }}">
+        </a>
+    </li>
+    
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1 class="soon" style="padding: 10px; margin-bottom: 5px;">{{ post.title }}</h1>
+                <p class="text-muted" style="padding: 10px; margin-bottom: 5px;">
+                    posted on: {{ post.created_on }} - posted by: {{ post.author }} |
+                </p>
+                <p class="card-text" style="padding: 10px; margin-top: 5px;">{{ post.content | safe }}</p>
+            </div>
+        </div>
+    </div>
+    
+    <!-- <div class="pagination">
+      <span class="step-links">
+          {% if page_obj.has_previous %}
+              <a href="?page=1">&laquo; first</a>
+              <a href="?page={{ page_obj.previous_page_number }}">previous</a>
+          {% endif %}
+
+          <span class="current">
+              Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
+          </span>
+
+          {% if page_obj.has_next %}
+              <a href="?page={{ page_obj.next_page_number }}">next</a>
+              <a href="?page={{ page_obj.paginator.num_pages }}">last &raquo;</a>
+          {% endif %}
+      </span>
+  </div>
+   -->
+{% endblock %}
+
